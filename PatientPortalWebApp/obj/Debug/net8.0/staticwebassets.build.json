@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "rMEZgPnIyKcFcfl//q9icwl6/jNqqrJyK6zHlLp9BZc=",
+  "Source": "PatientPortalWebApp",
+  "BasePath": "_content/PatientPortalWebApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "PatientPortalWebApp\\wwwroot",
+      "Source": "PatientPortalWebApp",
+      "ContentRoot": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\wwwroot\\",
+      "BasePath": "_content/PatientPortalWebApp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\PatientPortalWebApp.styles.css",
+      "SourceId": "PatientPortalWebApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/PatientPortalWebApp",
+      "RelativePath": "PatientPortalWebApp.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\PatientPortalWebApp.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PatientPortalWebApp.bundle.scp.css",
+      "SourceId": "PatientPortalWebApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/PatientPortalWebApp",
+      "RelativePath": "PatientPortalWebApp.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PatientPortalWebApp.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\wwwroot\\app.css",
+      "SourceId": "PatientPortalWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\wwwroot\\",
+      "BasePath": "_content/PatientPortalWebApp",
+      "RelativePath": "app.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\app.css"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PatientPortalWebApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\PatientPortalWebApp.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PatientPortalWebApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.PatientPortalWebApp.props",
+      "PackagePath": "build\\PatientPortalWebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.PatientPortalWebApp.props",
+      "PackagePath": "buildMultiTargeting\\PatientPortalWebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.PatientPortalWebApp.props",
+      "PackagePath": "buildTransitive\\PatientPortalWebApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
