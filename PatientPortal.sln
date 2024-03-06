@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{606A5A10-2FDA-4A4E-B044-188855AA03A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{606A5A10-2FDA-4A4E-B044-188855AA03A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientPortalWebApp", "PatientPortalWebApp\PatientPortalWebApp.csproj", "{7DC78F30-376C-4A4C-BD62-FB983B5BC65B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatientPortalWebApp", "PatientPortalWebApp\PatientPortalWebApp.csproj", "{7DC78F30-376C-4A4C-BD62-FB983B5BC65B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

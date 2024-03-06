@@ -1,0 +1,91 @@
+﻿@page "/create-account"
+
+<style>
+    .input-style {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .btn-style {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        display: inline-block;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+        .btn-style:hover {
+            background-color: #45a049;
+        }
+
+    .link-style {
+        text-decoration: none;
+        color: #4caf50;
+    }
+
+        .link-style:hover {
+            text-decoration: underline;
+        }
+
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        margin-top: 50px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+</style>
+
+<div class="container">
+    <h2>Create Account</h2>
+    <form method="post" @onsubmit="Submit" @formname="create-account">
+        <AntiforgeryToken />
+        <div>
+            <label>
+                <InputText @bind-Value="_patient!.Username" placeholder="Username" class="input-style" /><br>
+            </label>
+        </div>
+        <div>
+            <label>
+                <InputText @bind-Value="_patient!.Password" placeholder="Password" class="input-style" /><br>
+            </label>
+        </div>
+        <div>
+            <label>
+                <InputText @bind-Value="_patient!.FirstName" placeholder="First Name" class="input-style" /><br>
+            </label>
+        </div>
+        <div>
+            <label>
+                <InputText @bind-Value="_patient!.LastName" placeholder="Last Name" class="input-style" /><br>
+            </label>
+        </div>
+        <div>
+            <label>
+                <InputText @bind-Value="_patient!.Email" placeholder="Email" class="input-style" /><br>
+            </label>
+        </div>
+        <div>
+            <label>
+                <InputText @bind-Value="_patient!.PhoneNumber" placeholder="Phone Number" class="input-style" /><br>
+            </label>
+        </div>
+        <button type="submit" class="btn-style">Create Account</button>
+
+        <p>Already have an account? <a href="/" class="link-style">Sign In</a></p>
+    </form>
+</div>
+

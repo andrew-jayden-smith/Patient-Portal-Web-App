@@ -1,0 +1,16 @@
+﻿@page "/patients"
+
+<h3>Patients</h3>
+
+<ul>
+    @foreach(var patient in _patients)
+    {
+        <li>
+            @($"{patient.FirstName} {patient.LastName}")
+        </li>
+    }
+</ul>
+
+@code {
+
+}
