@@ -38,3 +38,4 @@ C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\M
 C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\Mono.TextTemplating.dll
 C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\obj\Debug\net8.0\PatientPortalWebApp.sourcelink.json

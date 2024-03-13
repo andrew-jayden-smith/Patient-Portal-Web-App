@@ -1,5 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
 using PatientPortalWebApp.Data;
 using PatientPortalWebApp.Models;
@@ -11,12 +10,10 @@ namespace PatientPortalWebApp.Components.Pages
         [SupplyParameterFromForm]
         public Patient? _patient { get; set; }
 
-
         [Inject]
         public NavigationManager _navigationManager { get; set; }
 
         [Inject]
-
         private AppDbContext _dbContext {  get; set; }
 
         protected override void OnInitialized() => _patient ??= new();
@@ -24,7 +21,6 @@ namespace PatientPortalWebApp.Components.Pages
         private void Submit()
         {
             // write to database 
-            Console.WriteLine(_patient.Username);
             _dbContext.Patients.Add(_patient);
             _dbContext.SaveChanges();
             _navigationManager.NavigateTo($"/patients");

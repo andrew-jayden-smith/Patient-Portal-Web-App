@@ -62,24 +62,18 @@ namespace PatientPortalWebApp.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-<<<<<<< HEAD
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-=======
->>>>>>> 9450603759ee061349a0cb679b078cb5632e285f
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-<<<<<<< HEAD
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-=======
->>>>>>> 9450603759ee061349a0cb679b078cb5632e285f
                     b.HasKey("Id");
 
                     b.ToTable("Doctors");
@@ -130,24 +124,18 @@ namespace PatientPortalWebApp.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-<<<<<<< HEAD
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-=======
->>>>>>> 9450603759ee061349a0cb679b078cb5632e285f
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-<<<<<<< HEAD
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-=======
->>>>>>> 9450603759ee061349a0cb679b078cb5632e285f
                     b.HasKey("Id");
 
                     b.ToTable("Patients");
