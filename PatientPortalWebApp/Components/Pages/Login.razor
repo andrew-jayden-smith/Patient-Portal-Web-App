@@ -1,20 +1,76 @@
 ﻿@page "/"
-@using PatientPortalWebApp.Components.Pages
 
-<h3>Login</h3>
+<style>
+    /* Styles for both login and create account pages */
+    .input-style {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
 
-@if (!string.IsNullOrEmpty(ErrorMessage))
-{
-    <p>@ErrorMessage</p>
-}
+    .btn-style {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        display: inline-block;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
 
-<form>
-    <div>
-        <InputText @bind-Value="Email" placeholder="Email" class="input-style" /><br>
-    </div>
-    <div>
-        <InputText @bind-Value = "Password" placeholder="Password" class="input-style" /><br>
-    </div>
-    <button type="submit" class="btn-style">Submit</button>
-    <p>Don't have an account? <a href="/create-account" class="link-style">Create Account</a></p>
-</form>
+        .btn-style:hover {
+            background-color: #45a049;
+        }
+
+    .link-style {
+        text-decoration: none;
+        color: #4caf50;
+    }
+
+        .link-style:hover {
+            text-decoration: underline;
+        }
+
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        margin-top: 50px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+</style>
+
+<div class="container">
+    <h2>Patient Login</h2>
+    <form method="post" @onsubmit="Submit" @formname="/">
+        <AntiforgeryToken />
+        <div>
+            <label>
+                <InputText @bind-Value="_patient.Email" placeholder="Email" class="input-style" /><br>
+            </label>
+        </div>
+        <div>
+            <label>
+                <InputText @bind-Value="_patient.Password" placeholder="Password" class="input-style" /><br>
+            </label>
+        </div>
+        <button type="submit" class="btn-style">Login</button>
+
+        <p>Don't have an account? <a href="/create-account-patient" class="link-style">Create Account</a></p>
+
+        @if (!loginSuccess)
+        {
+            <p style="color: red;">Invalid email or password. Please try again.</p>
+        }
+    </form>
+</div>

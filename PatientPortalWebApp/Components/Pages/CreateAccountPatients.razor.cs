@@ -5,7 +5,8 @@ using PatientPortalWebApp.Models;
 
 namespace PatientPortalWebApp.Components.Pages
 {
-    public partial class CreateAccount
+    public partial class CreateAccountPatients
+
     {
         [SupplyParameterFromForm]
         public Patient? _patient { get; set; }
@@ -14,7 +15,7 @@ namespace PatientPortalWebApp.Components.Pages
         public NavigationManager _navigationManager { get; set; }
 
         [Inject]
-        private AppDbContext _dbContext {  get; set; }
+        private AppDbContext _dbContext { get; set; }
 
         protected override void OnInitialized() => _patient ??= new();
 
@@ -23,8 +24,7 @@ namespace PatientPortalWebApp.Components.Pages
             // write to database 
             _dbContext.Patients.Add(_patient);
             _dbContext.SaveChanges();
-            _navigationManager.NavigateTo($"/patients");
+            _navigationManager.NavigateTo($"/");
         }
-
     }
 }

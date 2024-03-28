@@ -1,0 +1,122 @@
+﻿@page "/patient-dashboard"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Portal Dashboard</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* to prevent horizontal scrollbar */
+        }
+        /* Sidebar styling */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #45a049;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+            .sidebar a {
+                padding: 10px 15px;
+                text-decoration: none;
+                font-size: 18px;
+                color: white;
+                display: block;
+            }
+
+                .sidebar a:hover {
+                    background-color: #3C8A40;
+                }
+
+            .sidebar .toggle-btn {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                color: white;
+                font-size: 20px;
+            }
+
+            .sidebar .back-btn {
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                cursor: pointer;
+                color: white;
+                font-size: 20px;
+            }
+        /* Content area styling */
+        .content {
+            margin-left: 250px; /* adjust this to match sidebar width */
+            padding: 20px;
+            transition: margin-left 0.5s;
+        }
+
+        .card {
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+            .card:hover {
+                background-color: #e0e0e0;
+            }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <a href="#">Appointments</a>
+        <a href="#">Prescriptions</a>
+        <a href="#">Medical Records</a>
+        <a href="/chatbot">Live Automated Chat</a>
+        <a href="/">Log Out</a>
+    </div>
+
+    <!-- Content area -->
+    <div class="content" id="content">
+        <span class="toggle-btn" onclick="toggleSidebar()">☰</span>
+        <h1>Welcome to Your Patient Portal</h1>
+        <p>Click on the options below to navigate:</p>
+        <div class="card">Option 1</div>
+        <div class="card">Option 2</div>
+        <div class="card">Option 3</div>
+        <div class="card">Option 4</div>
+    </div>
+
+    <script>
+        // Function to toggle sidebar
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var content = document.getElementById("content");
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+                content.style.marginLeft = "0";
+            } else {
+                sidebar.style.width = "250x";
+                content.style.marginLeft = "250px";
+            }
+        }
+    </script>
+
+</body>
+</html>

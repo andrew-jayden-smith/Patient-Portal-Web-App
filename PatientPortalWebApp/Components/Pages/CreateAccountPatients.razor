@@ -1,4 +1,4 @@
-﻿@page "/create-account"
+﻿@page "/create-account-patient"
 
 <style>
     .input-style {
@@ -50,8 +50,8 @@
 </style>
 
 <div class="container">
-    <h2>Create Account</h2>
-    <form method="post" @onsubmit="Submit" @formname="create-account">
+    <h2>Create Patients Account</h2>
+    <form method="post" @onsubmit="Submit" @formname="create-account-patients">
         <AntiforgeryToken />
         <div>
             <label>

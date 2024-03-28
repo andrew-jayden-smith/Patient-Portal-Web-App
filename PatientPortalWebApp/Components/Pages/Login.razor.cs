@@ -2,43 +2,46 @@
 using Microsoft.EntityFrameworkCore;
 using PatientPortalWebApp.Data;
 using PatientPortalWebApp.Models;
-using System;
 using System.Linq;
 
 namespace PatientPortalWebApp.Components.Pages
 {
     public partial class Login
     {
+        [SupplyParameterFromForm]
+        public Patient _patient { get; set; } = new Patient();
+
         [Inject]
-        public NavigationManager _navigationManager { get; set; }
+        public NavigationManager NavigationManager { get; set; }
 
         [Inject]
         private AppDbContext DbContext { get; set; }
 
-        private string Email { get; set; }
-        private string Password { get; set; }
-        private string ErrorMessage { get; set; }
+        protected override void OnInitialized() { }
 
-        private async void Submit()
+        private bool loginSuccess = true;
+
+        private void Submit()
         {
-            try
+            // Check if the provided email and password match any existing user
+            var existingPatient = DbContext.Patients.FirstOrDefault(p => p.Email == _patient.Email && p.Password == _patient.Password);
+
+            if (existingPatient != null)
             {
-                var patient = await DbContext.Patients.FirstOrDefaultAsync(p => p.Email == Email && p.Password == Password);
-                if (patient != null)
-                {
-                    Console.WriteLine();
-                    // Login successful
-                    _navigationManager.NavigateTo("/home-page");
-                }
-                else
-                {
-                    ErrorMessage = "Invalid email or password. Please try again.";
-                }
+                // Successful login
+                // Redirect to the appropriate page, for example:
+                loginSuccess = true;
+                NavigationManager.NavigateTo($"/patient-dashboard");
             }
-            catch (Exception ex)
+            else
             {
-                ErrorMessage = "An error occurred: " + ex.Message;
+                // Failed login
+                // You can display an error message here if needed
+                loginSuccess = false;
+                StateHasChanged();
+
             }
         }
     }
 }
+
