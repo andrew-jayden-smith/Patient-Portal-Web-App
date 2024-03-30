@@ -57,6 +57,10 @@
               "target": "Package",
               "version": "[7.0.14, )"
             },
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[6.19.1, )"
+            },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[7.0.0, )"

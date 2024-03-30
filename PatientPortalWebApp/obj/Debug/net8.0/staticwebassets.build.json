@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rMEZgPnIyKcFcfl//q9icwl6/jNqqrJyK6zHlLp9BZc=",
+  "Hash": "Af6hE/xHyiA9HP3B5/aAVwQJIrwjRwpMi4cJ+VNPuVQ=",
   "Source": "PatientPortalWebApp",
   "BasePath": "_content/PatientPortalWebApp",
   "Mode": "Default",
@@ -16,6 +16,44 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\Owner\\.nuget\\packages\\mudblazor\\6.19.1\\staticwebassets\\MudBlazor.min.css",
+      "SourceId": "MudBlazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\Owner\\.nuget\\packages\\mudblazor\\6.19.1\\staticwebassets\\",
+      "BasePath": "_content/MudBlazor",
+      "RelativePath": "MudBlazor.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Owner\\.nuget\\packages\\mudblazor\\6.19.1\\staticwebassets\\MudBlazor.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\Owner\\.nuget\\packages\\mudblazor\\6.19.1\\staticwebassets\\MudBlazor.min.js",
+      "SourceId": "MudBlazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\Owner\\.nuget\\packages\\mudblazor\\6.19.1\\staticwebassets\\",
+      "BasePath": "_content/MudBlazor",
+      "RelativePath": "MudBlazor.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Owner\\.nuget\\packages\\mudblazor\\6.19.1\\staticwebassets\\MudBlazor.min.js"
+    },
     {
       "Identity": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\PatientPortalWebApp.styles.css",
       "SourceId": "PatientPortalWebApp",

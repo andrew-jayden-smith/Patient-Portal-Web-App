@@ -39,3 +39,15 @@ C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\M
 C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\Mono.TextTemplating.dll
 C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\System.CodeDom.dll
 C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\obj\Debug\net8.0\PatientPortalWebApp.sourcelink.json
+C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\Microsoft.Extensions.Localization.dll
+C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\Microsoft.JSInterop.dll
+C:\Users\Owner\source\repos\PatientPortal\PatientPortalWebApp\bin\Debug\net8.0\MudBlazor.dll

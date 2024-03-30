@@ -1,12 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 using PatientPortalWebApp.Components;
 using PatientPortalWebApp.Data;
+using MudBlazor.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddMudServices();
 
 var connectionString = "Server=localhost;Port=3306;Database=patient_portal_system;Uid=root;Pwd=Emilybeth01;";
 object value = builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
