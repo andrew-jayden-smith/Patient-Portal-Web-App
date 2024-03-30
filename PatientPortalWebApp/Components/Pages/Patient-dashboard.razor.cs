@@ -18,7 +18,7 @@ namespace PatientPortalWebApp.Components.Pages
         [Parameter]
         public string PatientId { get; set; }
 
-        public Patient Patient { get; set; }
+        public User Patient { get; set; }
 
         protected override async Task OnInitializedAsync()
         {

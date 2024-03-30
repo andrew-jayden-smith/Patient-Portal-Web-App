@@ -9,7 +9,7 @@ namespace PatientPortalWebApp.Data
 
         }
         // Creating new tables
-        public DbSet<Patient> Patients { get; set; }
+        public DbSet<User> Patients { get; set; }
         public DbSet<Doctors> Doctors { get; set; }
 
         public DbSet<Booking> Bookings { get; set; }

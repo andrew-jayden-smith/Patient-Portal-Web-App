@@ -1,6 +1,7 @@
-﻿@page "/doctor-dashboard"
+﻿@page "/doctor-dashboard/{doctorId}"
 <h3>doctor_dashboard</h3>
 
 @code {
-
+    [Parameter]
+    public string doctorId { get; set; }
 }

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using PatientPortalWebApp.Data;
 using PatientPortalWebApp.Models;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace PatientPortalWebApp.Components.Pages
@@ -9,7 +10,7 @@ namespace PatientPortalWebApp.Components.Pages
     public partial class Login
     {
         [SupplyParameterFromForm]
-        public Patient _patient { get; set; } = new Patient();
+        public User _user { get; set; } = new User();
 
         [Inject]
         public NavigationManager NavigationManager { get; set; }
@@ -23,15 +24,72 @@ namespace PatientPortalWebApp.Components.Pages
 
         private void Submit()
         {
-            // Check if the provided email and password match any existing user
-            var existingPatient = dbContext.Patients.FirstOrDefault(p => p.Email == _patient.Email && p.Password == _patient.Password);
+            var users = dbContext.Users;
 
-            if (existingPatient != null)
+            var patients = dbContext.Patients.ToList();
+            var doctors = dbContext.Doctors.ToList();
+            var admins = dbContext.Admins.ToList();
+
+            List<LoginUser?> loginUsers = new List<LoginUser?>();
+
+            foreach (var user in users)
+            {
+                if (user.Role == "patient") {
+                    loginUsers.Add(new LoginUser
+                    {
+                        User = user,
+                        Email = patients.FirstOrDefault(p => p.Id == user.AffiliateId).Email,
+                        Password = patients.FirstOrDefault(p => p.Id == user.AffiliateId).Password,
+
+                    });
+                } 
+                else if (user.Role == "admin")
+                {
+                    loginUsers.Add(new LoginUser
+                    {
+                        User = user,
+                        Email = admins.FirstOrDefault(p => p.Id == user.AffiliateId).Email,
+                        Password = admins.FirstOrDefault(p => p.Id == user.AffiliateId).Password,
+
+                    });
+                }
+                else if (user.Role == "doctor")
+                {
+                    loginUsers.Add(new LoginUser
+                    {
+                        User = user,
+                        Email = doctors.FirstOrDefault(p => p.Id == user.AffiliateId).Email,
+                        Password = doctors.FirstOrDefault(p => p.Id == user.AffiliateId).Password,
+
+                    });
+                }
+            }
+
+
+            // Check if the provided email and password match any existing user
+            var existingUser = loginUsers
+                .Where(p => p.HasValue)
+                .FirstOrDefault(p => p.Value.Email == _user.Email && p.Value.Password == _user.Password);
+
+            if (existingUser != null)
             {
                 // Successful login
                 // Redirect to the appropriate page, for example:
                 loginSuccess = true;
-                NavigationManager.NavigateTo($"/patient-dashboard/{existingPatient.Id}");
+
+                if (existingUser.Value.User.Role == "patient")
+                {
+                    NavigationManager.NavigateTo($"/patient-dashboard/{existingUser.Value.User.AffiliateId}");
+                }
+                else if (existingUser.Value.User.Role == "admin")
+                {
+                    NavigationManager.NavigateTo($"/admin-dashboard/{existingUser.Value.User.AffiliateId}");
+                }
+                else if (existingUser.Value.User.Role == "doctor")
+                {
+                    NavigationManager.NavigateTo($"/doctor-dashboard/{existingUser.Value.User.AffiliateId}");
+                }
+                
             }
             else
             {
@@ -41,6 +99,14 @@ namespace PatientPortalWebApp.Components.Pages
                 StateHasChanged();
 
             }
+        }
+
+        public struct LoginUser
+        {
+            public Users User { get; set; }
+            public string Email { get; set; }
+            public string Password { get; set; }
+
         }
     }
 }

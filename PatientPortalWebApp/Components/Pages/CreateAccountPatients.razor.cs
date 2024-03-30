@@ -9,7 +9,7 @@ namespace PatientPortalWebApp.Components.Pages
 
     {
         [SupplyParameterFromForm]
-        public Patient? _patient { get; set; }
+        public User? _patient { get; set; }
 
         [Inject]
         public NavigationManager _navigationManager { get; set; }

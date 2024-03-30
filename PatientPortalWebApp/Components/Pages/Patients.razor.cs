@@ -17,7 +17,7 @@ namespace PatientPortalWebApp.Components.Pages
         // inject dbcontext 
         private AppDbContext _dbContext {  get; set; }
 
-        private List<Patient> _patients;
+        private List<User> _patients;
 
         private String _PatientFirstName { get; set; }
 
