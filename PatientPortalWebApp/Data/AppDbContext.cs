@@ -16,6 +16,12 @@ namespace PatientPortalWebApp.Data
 
         public DbSet<MedicalRecords> MedicalRecords { get; set; }
 
+        public DbSet<Admin> Admins { get; set; }
+
+        public DbSet<Users> Users { get; set; }
+
+
+
 
     }
 }

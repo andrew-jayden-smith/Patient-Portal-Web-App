@@ -15,7 +15,7 @@ namespace PatientPortalWebApp.Components.Pages
         public NavigationManager NavigationManager { get; set; }
 
         [Inject]
-        private AppDbContext DbContext { get; set; }
+        private AppDbContext dbContext { get; set; }
 
         protected override void OnInitialized() { }
 
@@ -24,14 +24,14 @@ namespace PatientPortalWebApp.Components.Pages
         private void Submit()
         {
             // Check if the provided email and password match any existing user
-            var existingPatient = DbContext.Patients.FirstOrDefault(p => p.Email == _patient.Email && p.Password == _patient.Password);
+            var existingPatient = dbContext.Patients.FirstOrDefault(p => p.Email == _patient.Email && p.Password == _patient.Password);
 
             if (existingPatient != null)
             {
                 // Successful login
                 // Redirect to the appropriate page, for example:
                 loginSuccess = true;
-                NavigationManager.NavigateTo($"/patient-dashboard");
+                NavigationManager.NavigateTo($"/patient-dashboard/{existingPatient.Id}");
             }
             else
             {

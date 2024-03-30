@@ -1,8 +1,7 @@
 
 ﻿
 using Microsoft.AspNetCore.Components;
-﻿using Microsoft.AspNetCore.Components;
-
+using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
 using PatientPortalWebApp.Data;
 using PatientPortalWebApp.Models;
