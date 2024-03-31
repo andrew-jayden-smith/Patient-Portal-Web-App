@@ -1,14 +1,10 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Microsoft.EntityFrameworkCore;
 using PatientPortalWebApp.Data;
 using PatientPortalWebApp.Models;
-using System;
-using System.Threading.Tasks;
-using static PatientPortalWebApp.Components.Pages.Login;
 
 namespace PatientPortalWebApp.Components.Pages
 {
-    public partial class Patient_dashboard : ComponentBase
+    public partial class AccountInfo
     {
         [Inject]
         private NavigationManager NavigationManager { get; set; }
@@ -20,12 +16,6 @@ namespace PatientPortalWebApp.Components.Pages
         public string PatientId { get; set; }
 
         public User Patient { get; set; }
-
-
-        public void GoToAccountPage()
-        {
-            NavigationManager.NavigateTo($"/account/{PatientId}");
-        }
 
         protected override async Task OnInitializedAsync()
         {
@@ -45,5 +35,4 @@ namespace PatientPortalWebApp.Components.Pages
             }
         }
     }
-
 }

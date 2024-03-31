@@ -2,47 +2,23 @@
 <MudThemeProvider />
 
 <MudLayout>
-    <MudAppBar Elevation="1" BackgroundColorClass="custom-app-bar">
-        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        <MudText Typo="Typo.h5" Class="ml-3">Patient Portal Dashboard</MudText>
-        <MudSpacer />
-        <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Edge="Edge.End" />
-    </MudAppBar>
 
-    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
-        <MudNavMenu Items="navItems" />
-    </MudDrawer>
+    <MudAppBar Elevation="1" BackgroundColorClass="custom-app-bar">
+        <MudText Typo="Typo.h5" Class="ml-3">Medical Patient Portal</MudText>
+        <MudSpacer />
+
+        <div style="padding-right: 20px;">
+            <MudText Typo="Typo.h5" Class="ml-3">@Patient?.FirstName @Patient?.LastName</MudText>
+        </div>
+        <MudIconButton Icon="@Icons.Material.Filled.Person" Color="Color.Inherit" Edge="Edge.Start" @onclick="GoToAccountPage" />
+        <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit" Padding="Spacing.All(20)" Edge="Edge.End" />
+    </MudAppBar>
 
     <MudMainContent>
         <div class="content">
-            <MudTabs Elevation="5" Rounded="true" Color="@Color.Success" PrevIcon="@Icons.Material.Filled.SkipPrevious" NextIcon="@Icons.Material.Filled.SkipNext">
-                <MudTabPanel Text="Medical Records" />
-                <MudTabPanel Text="Appointments" />
-                <MudTabPanel Text="Prescriptions" />
-                <MudTabPanel Text="Message a Doctor" />
-            </MudTabs>
-
-            <h1>Welcome to Your Patient Portal</h1>
-            <h2>Welcome, @Patient.FirstName</h2>
+            <!-- Main content here -->
         </div>
     </MudMainContent>
+
 </MudLayout>
 
-@code {
-    bool _drawerOpen = true;
-
-    void DrawerToggle()
-    {
-        _drawerOpen = !_drawerOpen;
-    }
-
-    // Navigation items
-    List<MudListItem> navItems = new List<MudListItem>
-    {
-        new MudListItem{ ChildContent = @<MudLink Href="#">Appointments</MudLink> },
-        new MudListItem{ ChildContent = @<MudLink Href="#">Prescriptions</MudLink> },
-        new MudListItem{ ChildContent = @<MudLink Href="#">Medical Records</MudLink> },
-        new MudListItem{ ChildContent = @<MudLink Href="/chatbot">Live Automated Chat</MudLink> },
-        new MudListItem{ ChildContent = @<MudLink Href="/">Log Out</MudLink> }
-    };
-}

@@ -20,8 +20,5 @@ namespace PatientPortalWebApp.Data
 
         public DbSet<Users> Users { get; set; }
 
-
-
-
     }
 }
