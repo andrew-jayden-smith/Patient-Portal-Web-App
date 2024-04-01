@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.EntityFrameworkCore;
 using PatientPortalWebApp.Data;
 using PatientPortalWebApp.Models;
+using System;
+using System.Threading.Tasks;
 
 namespace PatientPortalWebApp.Components.Pages
 {
-    public partial class AccountInfo
+    public partial class Admin_dashboard : ComponentBase
     {
         [Inject]
         private NavigationManager NavigationManager { get; set; }
@@ -13,24 +16,29 @@ namespace PatientPortalWebApp.Components.Pages
         private AppDbContext _dbContext { get; set; }
 
         [Parameter]
-        public string PatientId { get; set; }
+        public string AdminId { get; set; }
 
-        public User Patient { get; set; }
+        public Admin Admin { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
             try
             {
-                if (!int.TryParse(PatientId, out int patientId))
+                if (!int.TryParse(AdminId, out int adminId))
                 {
-                    throw new InvalidOperationException("Invalid PatientId format.");
+                    throw new InvalidOperationException("Invalid AdminId format.");
                 }
 
-                Patient = await _dbContext.Patients.FindAsync(patientId);
+                Admin = await _dbContext.Admins.FindAsync(adminId);
+
+                if (Admin == null)
+                {
+                    throw new InvalidOperationException("Admin not found.");
+                }
             }
             catch (InvalidOperationException)
             {
-                // Handle case where patient is not found or invalid PatientId format
+                // Handle case where admin is not found or invalid AdminId format
                 NavigationManager.NavigateTo("/"); // Redirect to homepage or an error page
             }
         }

@@ -1,6 +1,133 @@
 ﻿@page "/admin-dashboard/{adminId}"
-<h3>admin_dashboard</h3>
+
+@using MudBlazor
+<MudLayout>
+
+    <MudAppBar Elevation="1">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@ToggleDrawer" />
+
+        <MudSpacer />
+
+        <div>
+            <MudText Typo="Typo.h5" Class="ml-3">@Admin?.FirstName @Admin?.LastName</MudText>
+        </div>
+
+    </MudAppBar>
+
+    <MudDrawer @bind-Open="@open" Elevation="1">
+        <MudDrawerHeader>
+            <MudText Typo="Typo.h6">My App</MudText>
+        </MudDrawerHeader>
+        <MudNavMenu>
+            <MudNavLink Match="NavLinkMatch.All">Store</MudNavLink>
+            <MudNavLink Match="NavLinkMatch.All">Library</MudNavLink>
+            <MudNavLink Match="NavLinkMatch.All">Community</MudNavLink>
+        </MudNavMenu>
+    </MudDrawer>
+
+
+    <MudMainContent Class="pt-16 px-16">
+        <MudContainer Class="mt-6">
+
+            <div style="display: flex;">
+                <div style="padding: 20px; flex: 1;">
+                    <MudCard>
+                        <MudCardHeader>
+                            <CardHeaderContent>
+                                <MudText Typo="Typo.h6">Appointments</MudText>
+                            </CardHeaderContent>
+                            <CardHeaderActions>
+                                <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
+                            </CardHeaderActions>
+                        </MudCardHeader>
+                        <MudCardContent>
+                            <MudText>This day everything happened.</MudText>
+                            <MudText Typo="Typo.body2">The quick, brown fox jumps over a lazy dog.</MudText>
+                        </MudCardContent>
+                        <MudCardActions>
+                            <MudButton Variant="Variant.Text" Color="Color.Primary">Read More</MudButton>
+                        </MudCardActions>
+                    </MudCard>
+                </div>
+
+                <div style="padding: 20px; flex: 1;">
+                    <MudCard>
+                        <MudCardHeader>
+                            <CardHeaderContent>
+                                <MudText Typo="Typo.h6">Account Information</MudText>
+                            </CardHeaderContent>
+                            <CardHeaderActions>
+                                <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
+                            </CardHeaderActions>
+                        </MudCardHeader>
+                        <MudCardContent>
+                            <ul>
+                                <li><strong>Patient Id:</strong> @Admin?.Id</li>
+                                <li><strong>First Name:</strong> @Admin?.FirstName</li>
+                                <li><strong>Last Name:</strong> @Admin?.LastName</li>
+                                <li><strong>Email:</strong> @Admin?.Email</li>
+                                <li><strong>PhoneNumber:</strong> @Admin?.PhoneNumber</li>
+                            </ul>
+                        </MudCardContent>
+                    </MudCard>
+                </div>
+
+            </div>
+
+
+            <div style="display: flex;">
+                <div style="padding: 20px; flex: 1;">
+                    <MudCard>
+                        <MudCardHeader>
+                            <CardHeaderContent>
+                                <MudText Typo="Typo.h6">Medical Records</MudText>
+                            </CardHeaderContent>
+                            <CardHeaderActions>
+                                <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
+                            </CardHeaderActions>
+                        </MudCardHeader>
+                        <MudCardContent>
+                            <MudText>This day everything happened.</MudText>
+                            <MudText Typo="Typo.body2">The quick, brown fox jumps over a lazy dog.</MudText>
+                        </MudCardContent>
+                        <MudCardActions>
+                            <MudButton Variant="Variant.Text" Color="Color.Primary">Read More</MudButton>
+                        </MudCardActions>
+                    </MudCard>
+                </div>
+
+                <div style="padding: 20px; flex: 1;">
+                    <MudCard>
+                        <MudCardHeader>
+                            <CardHeaderContent>
+                                <MudText Typo="Typo.h6">Prescriptions</MudText>
+                            </CardHeaderContent>
+                            <CardHeaderActions>
+                                <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
+                            </CardHeaderActions>
+                        </MudCardHeader>
+                        <MudCardContent>
+
+                        </MudCardContent>
+                        <MudCardActions>
+                            <MudButton Variant="Variant.Text" Color="Color.Primary">Read More</MudButton>
+                        </MudCardActions>
+                    </MudCard>
+                </div>
+            </div>
+
+
+        </MudContainer>
+    </MudMainContent>
+
+</MudLayout>
+
 
 @code {
+    bool open = false;
 
+    void ToggleDrawer()
+    {
+        open = !open;
+    }
 }

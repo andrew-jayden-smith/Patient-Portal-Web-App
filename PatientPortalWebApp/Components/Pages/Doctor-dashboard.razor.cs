@@ -4,11 +4,10 @@ using PatientPortalWebApp.Data;
 using PatientPortalWebApp.Models;
 using System;
 using System.Threading.Tasks;
-using static PatientPortalWebApp.Components.Pages.Login;
 
 namespace PatientPortalWebApp.Components.Pages
 {
-    public partial class Patient_dashboard : ComponentBase
+    public partial class Doctor_dashboard : ComponentBase
     {
         [Inject]
         private NavigationManager NavigationManager { get; set; }
@@ -17,25 +16,29 @@ namespace PatientPortalWebApp.Components.Pages
         private AppDbContext _dbContext { get; set; }
 
         [Parameter]
-        public string PatientId { get; set; }
+        public string DoctorId { get; set; }
 
-        public User Patient { get; set; }
-
+        public Doctors Doctor { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
             try
             {
-                if (!int.TryParse(PatientId, out int patientId))
+                if (!int.TryParse(DoctorId, out int doctorId))
                 {
-                    throw new InvalidOperationException("Invalid PatientId format.");
+                    throw new InvalidOperationException("Invalid DoctorId format.");
                 }
 
-                Patient = await _dbContext.Patients.FindAsync(patientId);
+                Doctor = await _dbContext.Doctors.FindAsync(doctorId);
+
+                if (Doctor == null)
+                {
+                    throw new InvalidOperationException("Doctor not found.");
+                }
             }
-           catch (InvalidOperationException)
+            catch (InvalidOperationException)
             {
-                // Handle case where patient is not found or invalid PatientId format
+                // Handle case where admin is not found or invalid AdminId format
                 NavigationManager.NavigateTo("/"); // Redirect to homepage or an error page
             }
         }
