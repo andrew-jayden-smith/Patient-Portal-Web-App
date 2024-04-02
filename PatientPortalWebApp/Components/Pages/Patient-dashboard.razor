@@ -1,65 +1,138 @@
 ﻿@page "/patient-dashboard/{PatientId}"
-@using MudBlazor
-<MudLayout>
 
-    <MudAppBar Elevation="1">
-        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@ToggleDrawer" />
-       
-        <MudSpacer />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+    <style>
+        body {
+            padding-top: 20px; /* Adjust based on the height of your top taskbar */
+        }
 
-        <div>
-            <MudText Typo="Typo.h5" Class="ml-3">@Patient?.FirstName @Patient?.LastName</MudText>
-        </div>
+        .top-taskbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 1000;
+            background-color: #45a049; /* Dark background color */
+        }
 
-    </MudAppBar>
+        .main-content {
+            padding-top: 80px; /* Adjust based on the height of your top taskbar */
+        }
 
-    <MudDrawer @bind-Open="@open" Elevation="1">
-        <MudDrawerHeader>
-            <MudText Typo="Typo.h6">My App</MudText>
-        </MudDrawerHeader>
-        <MudNavMenu>
-            <MudNavLink Match="NavLinkMatch.All">Store</MudNavLink>
-            <MudNavLink Match="NavLinkMatch.All">Library</MudNavLink>
-            <MudNavLink Match="NavLinkMatch.All">Community</MudNavLink>
-        </MudNavMenu>
-    </MudDrawer>
+        .section-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa; /* Light background color */
+            border: 1px solid #ced4da; /* Border color */
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-taskbar">
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container" style="color: white">
+                <div style="font-size: x-large; padding-top: 10px">
+
+                    <span style="padding-right: 100px"class="ml-3 text-white">Patient: @Patient?.FirstName @Patient?.LastName</span>
+                    
+                    <button style="padding-right: 20px" class="w3-bar-item w3-button" onclick="openCity('London')">London</button>
+                    <button style="padding-right: 20px" class="w3-bar-item w3-button" onclick="openCity('Paris')">Paris</button>
+                    <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Tokyo</button>
+
+                    <a class="btn btn-primary top-taskbar-button" style="color: white; margin-right: 20px; padding-right: 20px;" href="/accountInfo/@PatientId">Account</a>
 
 
-    <MudMainContent Class="pt-16 px-16">
-        <MudContainer Class="mt-6">
+                </div>
+            </div>
+        </nav>
+    </header>
 
-            <div style="display: flex;">
-                <div style="padding: 20px; flex: 1;">
-                    <MudCard>
-                        <MudCardHeader>
-                            <CardHeaderContent>
-                                <MudText Typo="Typo.h6">Appointments</MudText>
-                            </CardHeaderContent>
-                            <CardHeaderActions>
-                                <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
-                            </CardHeaderActions>
-                        </MudCardHeader>
-                        <MudCardContent>
-                            <MudText>This day everything happened.</MudText>
-                            <MudText Typo="Typo.body2">The quick, brown fox jumps over a lazy dog.</MudText>
-                        </MudCardContent>
-                        <MudCardActions>
-                            <MudButton Variant="Variant.Text" Color="Color.Primary">Read More</MudButton>
-                        </MudCardActions>
-                    </MudCard>
+    <main class="main-content">
+        <div class="container">
+
+
+
+            <div id="London" class="w3-container city">
+                <h2>London</h2>
+                <p>London is the capital city of England.</p>
+            </div>
+
+            <div id="Paris" class="w3-container city" style="display:none">
+                <h2>Paris</h2>
+                <p>Paris is the capital of France.</p>
+            </div>
+
+            <div id="Tokyo" class="w3-container city" style="display:none">
+                <h2>Tokyo</h2>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+
+            <script>
+                function openCity(cityName) {
+                    var i;
+                    var x = document.getElementsByClassName("city");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    document.getElementById(cityName).style.display = "block";
+                }
+            </script>
+
+            <div class="tab-content mt-3" id="myTabContent">
+                <div class="tab-pane fade show active" id="appointments" role="tabpanel" aria-labelledby="appointments-tab">
+                    <div class="section-container">
+                        <p>Schedule with a doctor</p>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="medical-records" role="tabpanel" aria-labelledby="medical-records-tab">
+                    <div class="section-container">
+                        <p>Meds</p>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="prescriptions" role="tabpanel" aria-labelledby="prescriptions-tab">
+                    <div class="section-container">
+                        <p>Content Three</p>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="message" role="tabpanel" aria-labelledby="message-tab">
+                    <div class="section-container">
+                        <p>Content Disabled</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Appointments</h5>
+                            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-gear"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <p>This day everything happened.</p>
+                            <p>The quick, brown fox jumps over a lazy dog.</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary">Read More</button>
+                        </div>
+                    </div>
                 </div>
 
-                <div style="padding: 20px; flex: 1;">
-                    <MudCard>
-                        <MudCardHeader>
-                            <CardHeaderContent>
-                                <MudText Typo="Typo.h6">Account Information</MudText>
-                            </CardHeaderContent>
-                            <CardHeaderActions>
-                                <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
-                            </CardHeaderActions>
-                        </MudCardHeader>
-                        <MudCardContent>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Account Information</h5>
+                            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-gear"></i></button>
+                        </div>
+                        <div class="card-body">
                             <ul>
                                 <li><strong>Patient Id:</strong> @Patient?.Id</li>
                                 <li><strong>First Name:</strong> @Patient?.FirstName</li>
@@ -67,66 +140,51 @@
                                 <li><strong>Email:</strong> @Patient?.Email</li>
                                 <li><strong>PhoneNumber:</strong> @Patient?.PhoneNumber</li>
                             </ul>
-                        </MudCardContent>
-                    </MudCard>
-                </div>
-
-            </div>
-
-
-            <div style="display: flex;">
-                <div style="padding: 20px; flex: 1;">
-                    <MudCard>
-                        <MudCardHeader>
-                            <CardHeaderContent>
-                                <MudText Typo="Typo.h6">Medical Records</MudText>
-                            </CardHeaderContent>
-                            <CardHeaderActions>
-                                <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
-                            </CardHeaderActions>
-                        </MudCardHeader>
-                        <MudCardContent>
-                            <MudText>This day everything happened.</MudText>
-                            <MudText Typo="Typo.body2">The quick, brown fox jumps over a lazy dog.</MudText>
-                        </MudCardContent>
-                        <MudCardActions>
-                            <MudButton Variant="Variant.Text" Color="Color.Primary">Read More</MudButton>
-                        </MudCardActions>
-                    </MudCard>
-                </div>
-
-                <div style="padding: 20px; flex: 1;">
-                    <MudCard>
-                        <MudCardHeader>
-                            <CardHeaderContent>
-                                <MudText Typo="Typo.h6">Prescriptions</MudText>
-                            </CardHeaderContent>
-                            <CardHeaderActions>
-                                <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
-                            </CardHeaderActions>
-                        </MudCardHeader>
-                        <MudCardContent>
-
-                        </MudCardContent>
-                        <MudCardActions>
-                            <MudButton Variant="Variant.Text" Color="Color.Primary">Read More</MudButton>
-                        </MudCardActions>
-                    </MudCard>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <div class="row mt-5">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Medical Records</h5>
+                            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-gear"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <p>This day everything happened.</p>
+                            <p>The quick, brown fox jumps over a lazy dog.</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary">Read More</button>
+                        </div>
+                    </div>
+                </div>
 
-        </MudContainer>
-    </MudMainContent>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Prescriptions</h5>
+                            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-gear"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <!-- Prescriptions content goes here -->
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary">Read More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-</MudLayout>
+        </div>
+    </main>
 
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
 
-@code {
-    bool open = false;
+</body>
+</html>
 
-    void ToggleDrawer()
-    {
-        open = !open;
-    }
-}

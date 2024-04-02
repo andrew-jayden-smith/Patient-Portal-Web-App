@@ -1,0 +1,41 @@
+﻿@page "/accountInfo/{PatientId}"
+@inject HttpClient HttpClient
+@using PatientPortalWebApp.Models
+
+<MudContainer>
+    <div style="padding: 20px; flex: 1;">
+        <MudCard>
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h6">Account Information</MudText>
+                </CardHeaderContent>
+                <CardHeaderActions>
+                    <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
+                </CardHeaderActions>
+            </MudCardHeader>
+            <MudCardContent>
+                <ul>
+                    <li><strong>Patient Id:</strong> @Patient?.Id</li>
+                    <li>
+                        <strong>First Name:</strong>
+                        <MudTextField @bind-Value="@Patient.FirstName" />
+                    </li>
+                    <li>
+                        <strong>Last Name:</strong>
+                        <MudTextField @bind-Value="@Patient.LastName" />
+                    </li>
+                    <li>
+                        <strong>Email:</strong>
+                        <MudTextField @bind-Value="@Patient.Email" />
+                    </li>
+                    <li>
+                        <strong>Phone Number:</strong>
+                        <MudTextField @bind-Value="@Patient.PhoneNumber" />
+                    </li>
+                </ul>
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="UpdateAccount">Save Changes</MudButton>
+            </MudCardContent>
+        </MudCard>
+    </div>
+</MudContainer>
+

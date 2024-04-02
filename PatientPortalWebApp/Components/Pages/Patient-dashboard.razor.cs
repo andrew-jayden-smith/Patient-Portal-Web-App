@@ -21,7 +21,6 @@ namespace PatientPortalWebApp.Components.Pages
 
         public User Patient { get; set; }
 
-
         protected override async Task OnInitializedAsync()
         {
             try
