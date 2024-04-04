@@ -18,6 +18,9 @@ namespace PatientPortalWebApp.Components.Pages
         [Inject]
         private AppDbContext dbContext { get; set; }
 
+        //[Inject]
+        //private MockData MockData { get; set; }
+
         protected override void OnInitialized() { }
 
         private bool loginSuccess = true;
@@ -30,8 +33,9 @@ namespace PatientPortalWebApp.Components.Pages
             var doctors = dbContext.Doctors.ToList();
             var admins = dbContext.Admins.ToList();
 
+            // create a list of loginUsers
             List<LoginUser?> loginUsers = new List<LoginUser?>();
-
+            // loop the users to see what their role 
             foreach (var user in users)
             {
                 if (user.Role == "patient") {

@@ -55,11 +55,6 @@
         <AntiforgeryToken />
         <div>
             <label>
-                <InputText @bind-Value="_patient!.Password" placeholder="Password" class="input-style" /><br>
-            </label>
-        </div>
-        <div>
-            <label>
                 <InputText @bind-Value="_patient!.FirstName" placeholder="First Name" class="input-style" /><br>
             </label>
         </div>
@@ -75,9 +70,35 @@
         </div>
         <div>
             <label>
+                <InputText @bind-Value="_patient!.Password" placeholder="Password" class="input-style" /><br>
+            </label>
+        </div>
+        <div>
+            <label>
                 <InputText @bind-Value="_patient!.PhoneNumber" placeholder="Phone Number" class="input-style" /><br>
             </label>
         </div>
+        <div>
+            <label>
+                <InputText @bind-Value="_patient!.Address" placeholder="Address" class="input-style" /><br>
+            </label>
+        </div>
+        <div>
+            <label>
+                <InputText @bind-Value="_patient!.Height" placeholder="Height" class="input-style" /><br>
+            </label>
+        </div>
+        <div>
+            <label>
+                <InputText @bind-Value="_patient!.Weight" placeholder="Weight" class="input-style" /><br>
+            </label>
+        </div>
+        <div>
+            <label>
+                <InputText @bind-Value="_patient!.Prescription" placeholder="Current Prescriptions" class="input-style" /><br>
+            </label>
+        </div>
+
         <button type="submit" class="btn-style">Create Account</button>
 
         <p>Already have an account? <a href="/" class="link-style">Sign In</a></p>

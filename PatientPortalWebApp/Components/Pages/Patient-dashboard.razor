@@ -13,12 +13,14 @@
 <body>
 
     <!-- Taskbar -->
-    <div class="bg-dark text-white p-2 d-flex justify-content-between align-items-center">
-        <h1 class="text-center m-0" style="font-size: 24px;">Medical Portal</h1>
-        <div>
-            Patient: <span>@Patient?.FirstName</span> <span>@Patient?.LastName</span>
-        </div> <!-- This empty div will push the title to the left -->
+<div class="bg-dark text-white p-2 d-flex justify-content-between align-items-center">
+    <h1 class="text-center m-0" style="font-size: 24px;">Medical Portal</h1>
+    <div>
+        Patient: <span>@Patient?.FirstName</span> <span>@Patient?.LastName</span>
+        <a href="/" class="btn btn-outline-light ml-2">Log Out</a>
     </div>
+</div>
+
 
 
 
@@ -53,7 +55,6 @@
                                     <li><strong>Email:</strong> @Patient?.Email</li>
                                     <li><strong>Phone Number:</strong> @Patient?.PhoneNumber</li>
                                     <li><strong>Address:</strong> @Patient?.Address</li>
-                                    <li><strong>DOB:</strong> @Patient?.DateOfBirth</li>
                                     <li><strong>Height:</strong> @Patient?.Height</li>
                                     <li><strong>Weight:</strong> @Patient?.Weight</li>
                                 </ul>

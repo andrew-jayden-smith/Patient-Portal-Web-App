@@ -50,9 +50,24 @@ namespace PatientPortalWebApp.Components.Pages
                 NavigationManager.NavigateTo("/"); // Redirect to homepage or an error page
             }
 
-            // Retrieve patients and doctors from the database
+            // Retrieve patients from the database
             _patients = await _dbContext.Patients.ToListAsync();
+            if (_patients == null)
+            {
+                // Handle case where patients list is null
+                // For example, display a message or log an error
+                _patients = new List<User>(); // Initialize to an empty list to avoid null reference exceptions
+            }
+
+            // Retrieve doctors from the database
             _doctors = await _dbContext.Doctors.ToListAsync();
+            if (_doctors == null)
+            {
+                // Handle case where doctors list is null
+                // For example, display a message or log an error
+                _doctors = new List<Doctors>(); // Initialize to an empty list to avoid null reference exceptions
+            }
         }
+
     }
 }

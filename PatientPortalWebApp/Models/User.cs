@@ -10,13 +10,13 @@ namespace PatientPortalWebApp.Models
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
-        public DateOnly DateOfBirth { get; set; }
-
         public string Address { get; set; }
         public string Height { get; set; }
         public string Weight { get; set; }
             
         public string Prescription { get; set; }
+
+        public int? DoctorAssigned { get; set; }
 
     }
 }
