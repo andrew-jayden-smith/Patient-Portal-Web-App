@@ -11,10 +11,7 @@ namespace PatientPortalWebApp.Components.Pages
     public partial class Patients
     {
         // inject dbcontext
-
-
         [Inject]
-        // inject dbcontext 
         private AppDbContext _dbContext {  get; set; }
 
         private List<User> _patients;
@@ -28,17 +25,6 @@ namespace PatientPortalWebApp.Components.Pages
 
             // display element
         _patients = _dbContext.Patients.ToList();
-            /*
-            var testPatient = new Patient
-            {
-                FirstName = "Michael", 
-                LastName = "Smith",
-                Email = "Test",
-                PhoneNumber = "Test"
-            };
-            _dbContext.Patients.Add(testPatient);
-            _dbContext.SaveChanges();
-            */
             
             _patients = _dbContext.Patients.ToList();
 

@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using PatientPortalWebApp.Data;
 using PatientPortalWebApp.Models;
 using System;
+using System.Collections.Generic;
+using System.Numerics;
 using System.Threading.Tasks;
 
 namespace PatientPortalWebApp.Components.Pages
@@ -20,6 +22,12 @@ namespace PatientPortalWebApp.Components.Pages
 
         public Admin Admin { get; set; }
 
+        private List<User> _patients;
+
+
+        private List<Doctors> _doctors;
+
+        // This method happens every time the page loads
         protected override async Task OnInitializedAsync()
         {
             try
@@ -41,6 +49,10 @@ namespace PatientPortalWebApp.Components.Pages
                 // Handle case where admin is not found or invalid AdminId format
                 NavigationManager.NavigateTo("/"); // Redirect to homepage or an error page
             }
+
+            // Retrieve patients and doctors from the database
+            _patients = await _dbContext.Patients.ToListAsync();
+            _doctors = await _dbContext.Doctors.ToListAsync();
         }
     }
 }

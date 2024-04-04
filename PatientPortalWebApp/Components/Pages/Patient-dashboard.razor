@@ -5,186 +5,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Dashboard</title>
-    <style>
-        body {
-            padding-top: 20px; /* Adjust based on the height of your top taskbar */
-        }
-
-        .top-taskbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            z-index: 1000;
-            background-color: #45a049; /* Dark background color */
-        }
-
-        .main-content {
-            padding-top: 80px; /* Adjust based on the height of your top taskbar */
-        }
-
-        .section-container {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #f8f9fa; /* Light background color */
-            border: 1px solid #ced4da; /* Border color */
-            border-radius: 5px;
-        }
-    </style>
+    <title>Medical Portal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
 
-    <header class="top-taskbar">
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="container" style="color: white">
-                <div style="font-size: x-large; padding-top: 10px">
-
-                    <span style="padding-right: 100px"class="ml-3 text-white">Patient: @Patient?.FirstName @Patient?.LastName</span>
-                    
-                    <button style="padding-right: 20px" class="w3-bar-item w3-button" onclick="openCity('London')">London</button>
-                    <button style="padding-right: 20px" class="w3-bar-item w3-button" onclick="openCity('Paris')">Paris</button>
-                    <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Tokyo</button>
-
-                    <a class="btn btn-primary top-taskbar-button" style="color: white; margin-right: 20px; padding-right: 20px;" href="/accountInfo/@PatientId">Account</a>
-
-
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main class="main-content">
-        <div class="container">
+    <!-- Taskbar -->
+    <div class="bg-dark text-white p-2 d-flex justify-content-between align-items-center">
+        <h1 class="text-center m-0" style="font-size: 24px;">Medical Portal</h1>
+        <div>
+            Patient: <span>@Patient?.FirstName</span> <span>@Patient?.LastName</span>
+        </div> <!-- This empty div will push the title to the left -->
+    </div>
 
 
 
-            <div id="London" class="w3-container city">
-                <h2>London</h2>
-                <p>London is the capital city of England.</p>
-            </div>
+    <!-- Navigation Tabs -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="dashboard1-tab" data-toggle="tab" href="#dashboard1" role="tab" aria-controls="dashboard1" aria-selected="true">Dashboard 1</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="dashboard2-tab" data-toggle="tab" href="#dashboard2" role="tab" aria-controls="dashboard2" aria-selected="false">Dashboard 2</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="dashboard3-tab" data-toggle="tab" href="#dashboard3" role="tab" aria-controls="dashboard3" aria-selected="false">Dashboard 3</a>
+        </li>
+    </ul>
 
-            <div id="Paris" class="w3-container city" style="display:none">
-                <h2>Paris</h2>
-                <p>Paris is the capital of France.</p>
-            </div>
-
-            <div id="Tokyo" class="w3-container city" style="display:none">
-                <h2>Tokyo</h2>
-                <p>Tokyo is the capital of Japan.</p>
-            </div>
-
-            <script>
-                function openCity(cityName) {
-                    var i;
-                    var x = document.getElementsByClassName("city");
-                    for (i = 0; i < x.length; i++) {
-                        x[i].style.display = "none";
-                    }
-                    document.getElementById(cityName).style.display = "block";
-                }
-            </script>
-
-            <div class="tab-content mt-3" id="myTabContent">
-                <div class="tab-pane fade show active" id="appointments" role="tabpanel" aria-labelledby="appointments-tab">
-                    <div class="section-container">
-                        <p>Schedule with a doctor</p>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="medical-records" role="tabpanel" aria-labelledby="medical-records-tab">
-                    <div class="section-container">
-                        <p>Meds</p>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="prescriptions" role="tabpanel" aria-labelledby="prescriptions-tab">
-                    <div class="section-container">
-                        <p>Content Three</p>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="message" role="tabpanel" aria-labelledby="message-tab">
-                    <div class="section-container">
-                        <p>Content Disabled</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mt-5">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title">Appointments</h5>
-                            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-gear"></i></button>
-                        </div>
-                        <div class="card-body">
-                            <p>This day everything happened.</p>
-                            <p>The quick, brown fox jumps over a lazy dog.</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-primary">Read More</button>
+    <!-- Tab Content -->
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="dashboard1" role="tabpanel" aria-labelledby="dashboard1-tab">
+            <div class="container-fluid mt-3">
+                <!-- Content for Dashboard 1 -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <ul>
+                                    <li style="font-size: 20px"><strong>Account Information</strong></li>
+                                    <h1></h1>
+                                    <li><strong>Patient Id:</strong> @Patient?.Id</li>
+                                    <li><strong>First Name:</strong> @Patient?.FirstName</li>
+                                    <li><strong>Last Name:</strong> @Patient?.LastName</li>
+                                    <li><strong>Email:</strong> @Patient?.Email</li>
+                                    <li><strong>Phone Number:</strong> @Patient?.PhoneNumber</li>
+                                    <li><strong>Address:</strong> @Patient?.Address</li>
+                                    <li><strong>DOB:</strong> @Patient?.DateOfBirth</li>
+                                    <li><strong>Height:</strong> @Patient?.Height</li>
+                                    <li><strong>Weight:</strong> @Patient?.Weight</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title">Account Information</h5>
-                            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-gear"></i></button>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <ul>
+                                    <li style="font-size: 20px"><strong>Prescription</strong></li>
+                                    <h1></h1>
+                                    <li><strong>Current:</strong> @Patient?.Prescription</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <ul>
-                                <li><strong>Patient Id:</strong> @Patient?.Id</li>
-                                <li><strong>First Name:</strong> @Patient?.FirstName</li>
-                                <li><strong>Last Name:</strong> @Patient?.LastName</li>
-                                <li><strong>Email:</strong> @Patient?.Email</li>
-                                <li><strong>PhoneNumber:</strong> @Patient?.PhoneNumber</li>
-                            </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                Dashboard 1 - Container 3
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="row mt-5">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title">Medical Records</h5>
-                            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-gear"></i></button>
-                        </div>
-                        <div class="card-body">
-                            <p>This day everything happened.</p>
-                            <p>The quick, brown fox jumps over a lazy dog.</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-primary">Read More</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title">Prescriptions</h5>
-                            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-gear"></i></button>
-                        </div>
-                        <div class="card-body">
-                            <!-- Prescriptions content goes here -->
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-primary">Read More</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </main>
-
-    <footer>
-        <!-- Footer content goes here -->
-    </footer>
-
+        <div class="tab-pane fade" id="dashboard2" role="tabpanel" aria-labelledby="dashboard2-tab">
+            <!-- Content for Dashboard 2 -->
+            <!-- Containers removed -->
+        </div>
+        <div class="tab-pane fade" id="dashboard3" role="tabpanel" aria-labelledby="dashboard3-tab">
+            <!-- Content for Dashboard 3 -->
+            <!-- Containers removed -->
+        </div>
+    </div>
 </body>
 </html>
-

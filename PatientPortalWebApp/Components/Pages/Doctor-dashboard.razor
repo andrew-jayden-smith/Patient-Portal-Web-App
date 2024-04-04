@@ -1,134 +1,83 @@
 ﻿@page "/doctor-dashboard/{DoctorId}"
-@using MudBlazor
-<MudLayout>
 
-    <MudAppBar Elevation="1">
-        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@ToggleDrawer" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Portal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
 
-        <MudText Typo="Typo.h6">Doctor</MudText>
+<body>
 
-        <MudSpacer />
-
+    <!-- Taskbar -->
+    <div class="bg-dark text-white p-2 d-flex justify-content-between align-items-center">
+        <h1 class="text-center m-0" style="font-size: 24px;">Medical Portal</h1>
         <div>
-            <MudText Typo="Typo.h5" Class="ml-3">@Doctor?.FirstName @Doctor?.LastName</MudText>
+            Doctor: <span>@Doctor?.FirstName</span> <span>@Doctor?.LastName</span>
+        </div> <!-- This empty div will push the title to the left -->
+    </div>
+
+
+
+    <!-- Navigation Tabs -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="dashboard1-tab" data-toggle="tab" href="#dashboard1" role="tab" aria-controls="dashboard1" aria-selected="true">Dashboard 1</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="dashboard2-tab" data-toggle="tab" href="#dashboard2" role="tab" aria-controls="dashboard2" aria-selected="false">Dashboard 2</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="dashboard3-tab" data-toggle="tab" href="#dashboard3" role="tab" aria-controls="dashboard3" aria-selected="false">Dashboard 3</a>
+        </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="dashboard1" role="tabpanel" aria-labelledby="dashboard1-tab">
+            <div class="container-fluid mt-3">
+                <!-- Content for Dashboard 1 -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <ul>
+                                    <li style="font-size: 20px"><strong>Account Information</strong></li>
+                                    <h1></h1>
+                                    <li><strong>Doctor Id:</strong> @Doctor?.Id</li>
+                                    <li><strong>First Name:</strong> @Doctor?.FirstName</li>
+                                    <li><strong>Last Name:</strong> @Doctor?.LastName</li>
+                                    <li><strong>Email:</strong> @Doctor?.Email</li>
+                                    <li><strong>Phone Number:</strong> @Doctor?.PhoneNumber</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <ul>
+                                    <li style="font-size: 20px"><strong>Current Patients</strong></li>
+                                    <h1></h1>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-    </MudAppBar>
-
-    <MudDrawer @bind-Open="@open" Elevation="1">
-        <MudDrawerHeader>
-            <MudText Typo="Typo.h6">My App</MudText>
-        </MudDrawerHeader>
-        <MudNavMenu>
-            <MudNavLink Match="NavLinkMatch.All">Store</MudNavLink>
-            <MudNavLink Match="NavLinkMatch.All">Library</MudNavLink>
-            <MudNavLink Match="NavLinkMatch.All">Community</MudNavLink>
-        </MudNavMenu>
-    </MudDrawer>
-
-
-    <MudMainContent Class="pt-16 px-16">
-        <MudContainer Class="mt-6">
-
-            <div style="display: flex;">
-                <div style="padding: 20px; flex: 1;">
-                    <MudCard>
-                        <MudCardHeader>
-                            <CardHeaderContent>
-                                <MudText Typo="Typo.h6">Appointments</MudText>
-                            </CardHeaderContent>
-                            <CardHeaderActions>
-                                <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
-                            </CardHeaderActions>
-                        </MudCardHeader>
-                        <MudCardContent>
-                            <MudText>This day everything happened.</MudText>
-                            <MudText Typo="Typo.body2">The quick, brown fox jumps over a lazy dog.</MudText>
-                        </MudCardContent>
-                        <MudCardActions>
-                            <MudButton Variant="Variant.Text" Color="Color.Primary">Read More</MudButton>
-                        </MudCardActions>
-                    </MudCard>
-                </div>
-
-                <div style="padding: 20px; flex: 1;">
-                    <MudCard>
-                        <MudCardHeader>
-                            <CardHeaderContent>
-                                <MudText Typo="Typo.h6">Account Information</MudText>
-                            </CardHeaderContent>
-                            <CardHeaderActions>
-                                <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
-                            </CardHeaderActions>
-                        </MudCardHeader>
-                        <MudCardContent>
-                            <ul>
-                                <li><strong>Doctor Id:</strong> @Doctor?.Id</li>
-                                <li><strong>First Name:</strong> @Doctor?.FirstName</li>
-                                <li><strong>Last Name:</strong> @Doctor?.LastName</li>
-                                <li><strong>Email:</strong> @Doctor?.Email</li>
-                                <li><strong>PhoneNumber:</strong> @Doctor?.PhoneNumber</li>
-                            </ul>
-                        </MudCardContent>
-                    </MudCard>
-                </div>
-
-            </div>
-
-
-            <div style="display: flex;">
-                <div style="padding: 20px; flex: 1;">
-                    <MudCard>
-                        <MudCardHeader>
-                            <CardHeaderContent>
-                                <MudText Typo="Typo.h6">Medical Records</MudText>
-                            </CardHeaderContent>
-                            <CardHeaderActions>
-                                <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
-                            </CardHeaderActions>
-                        </MudCardHeader>
-                        <MudCardContent>
-                            <MudText>This day everything happened.</MudText>
-                            <MudText Typo="Typo.body2">The quick, brown fox jumps over a lazy dog.</MudText>
-                        </MudCardContent>
-                        <MudCardActions>
-                            <MudButton Variant="Variant.Text" Color="Color.Primary">Read More</MudButton>
-                        </MudCardActions>
-                    </MudCard>
-                </div>
-
-                <div style="padding: 20px; flex: 1;">
-                    <MudCard>
-                        <MudCardHeader>
-                            <CardHeaderContent>
-                                <MudText Typo="Typo.h6">Prescriptions</MudText>
-                            </CardHeaderContent>
-                            <CardHeaderActions>
-                                <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default" />
-                            </CardHeaderActions>
-                        </MudCardHeader>
-                        <MudCardContent>
-
-                        </MudCardContent>
-                        <MudCardActions>
-                            <MudButton Variant="Variant.Text" Color="Color.Primary">Read More</MudButton>
-                        </MudCardActions>
-                    </MudCard>
-                </div>
-            </div>
-
-
-        </MudContainer>
-    </MudMainContent>
-
-</MudLayout>
-
-
-@code {
-    bool open = false;
-
-    void ToggleDrawer()
-    {
-        open = !open;
-    }
-}
+        <div class="tab-pane fade" id="dashboard2" role="tabpanel" aria-labelledby="dashboard2-tab">
+            <!-- Content for Dashboard 2 -->
+            <!-- Containers removed -->
+        </div>
+        <div class="tab-pane fade" id="dashboard3" role="tabpanel" aria-labelledby="dashboard3-tab">
+            <!-- Content for Dashboard 3 -->
+            <!-- Containers removed -->
+        </div>
+    </div>
+</body>
+</html>
