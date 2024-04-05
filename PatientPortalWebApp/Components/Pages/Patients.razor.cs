@@ -11,8 +11,11 @@ namespace PatientPortalWebApp.Components.Pages
     public partial class Patients
     {
         // inject dbcontext
+        //[Inject]
+        //private AppDbContext _dbContext {  get; set; }
+
         [Inject]
-        private AppDbContext _dbContext {  get; set; }
+        private MockData _dbContext { get; set; }
 
         private List<User> _patients;
 

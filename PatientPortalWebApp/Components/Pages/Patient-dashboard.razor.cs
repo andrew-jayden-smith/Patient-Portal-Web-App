@@ -13,8 +13,11 @@ namespace PatientPortalWebApp.Components.Pages
         [Inject]
         private NavigationManager NavigationManager { get; set; }
 
+        //[Inject]
+        //private AppDbContext _dbContext { get; set; }
+
         [Inject]
-        private AppDbContext _dbContext { get; set; }
+        private MockData _dbContext { get; set; }
 
         [Parameter]
         public string PatientId { get; set; }
@@ -30,7 +33,7 @@ namespace PatientPortalWebApp.Components.Pages
                     throw new InvalidOperationException("Invalid PatientId format.");
                 }
 
-                Patient = await _dbContext.Patients.FindAsync(patientId);
+                Patient = _dbContext.Patients.Where(x => x.Id == patientId).FirstOrDefault();
             }
            catch (InvalidOperationException)
             {

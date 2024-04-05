@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using PatientPortalWebApp.Models;
 
 namespace PatientPortalWebApp.Data
@@ -6,12 +7,16 @@ namespace PatientPortalWebApp.Data
     public class MockData
     {
         // Lists to store mock data
-        public List<User> Patients { get; set; }
-        public List<Doctors> Doctors { get; set; }
-        public List<Booking> Bookings { get; set; }
-        public List<MedicalRecords> MedicalRecords { get; set; }
-        public List<Admin> Admins { get; set; }
-        public List<Users> Users { get; set; }
+        public IEnumerable<User> Patients { get; set; }
+        public IEnumerable<Doctors> Doctors { get; set; }
+
+        public IEnumerable<Booking> Bookings { get; set; }
+
+        public IEnumerable<MedicalRecords> MedicalRecords { get; set; }
+
+        public IEnumerable<Admin> Admins { get; set; }
+
+        public IEnumerable<Users> Users { get; set; }
 
         public MockData()
         {
@@ -23,21 +28,5 @@ namespace PatientPortalWebApp.Data
             Admins = new List<Admin>();
             Users = new List<Users>();
         }
-
-        // Add methods to mimic CRUD operations
-
-        // Example: Add a patient
-        public void AddPatient(User patient)
-        {
-            Patients.Add(patient);
-        }
-
-        // Example: Retrieve all patients
-        public List<User> GetAllPatients()
-        {
-            return Patients;
-        }
-
-        // Add more methods as needed for CRUD operations
     }
 }

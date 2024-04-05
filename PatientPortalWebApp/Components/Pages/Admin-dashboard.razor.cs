@@ -14,8 +14,11 @@ namespace PatientPortalWebApp.Components.Pages
         [Inject]
         private NavigationManager NavigationManager { get; set; }
 
+        //[Inject]
+        //private AppDbContext _dbContext { get; set; }
+
         [Inject]
-        private AppDbContext _dbContext { get; set; }
+        private MockData _dbContext { get; set; }
 
         [Parameter]
         public string AdminId { get; set; }
@@ -37,7 +40,7 @@ namespace PatientPortalWebApp.Components.Pages
                     throw new InvalidOperationException("Invalid AdminId format.");
                 }
 
-                Admin = await _dbContext.Admins.FindAsync(adminId);
+                Admin = _dbContext.Admins.Where(x => x.Id == adminId).FirstOrDefault();
 
                 if (Admin == null)
                 {
@@ -51,7 +54,7 @@ namespace PatientPortalWebApp.Components.Pages
             }
 
             // Retrieve patients from the database
-            _patients = await _dbContext.Patients.ToListAsync();
+            _patients = _dbContext.Patients.ToList();
             if (_patients == null)
             {
                 // Handle case where patients list is null
@@ -60,7 +63,7 @@ namespace PatientPortalWebApp.Components.Pages
             }
 
             // Retrieve doctors from the database
-            _doctors = await _dbContext.Doctors.ToListAsync();
+            _doctors = _dbContext.Doctors.ToList();
             if (_doctors == null)
             {
                 // Handle case where doctors list is null

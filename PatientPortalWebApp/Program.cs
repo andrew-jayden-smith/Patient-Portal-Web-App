@@ -12,8 +12,10 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddMudServices();
 
-var connectionString = "Server=localhost;Port=3306;Database=patient_portal_system;Uid=root;Pwd=Emilybeth01;";
-object value = builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+//var connectionString = "Server=localhost;Port=3306;Database=patient_portal_system;Uid=root;Pwd=Emilybeth01;";
+//object value = builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
+builder.Services.AddSingleton<MockData>();
 
 var app = builder.Build();
 
