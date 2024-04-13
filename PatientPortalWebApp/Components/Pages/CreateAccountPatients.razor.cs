@@ -18,19 +18,20 @@ namespace PatientPortalWebApp.Components.Pages
         [Inject]
         public NavigationManager _navigationManager { get; set; }
 
-        //[Inject]
-        //private AppDbContext _dbContext { get; set; }
-
         [Inject]
-        private MockData _dbContext { get; set; }
+        private AppDbContext _dbContext { get; set; }
+
+        //[Inject]
+        //private MockData _dbContext { get; set; }
 
         protected override void OnInitialized() => _patient ??= new();
 
         private void Submit()
         {
             // write to database table patients
-            _dbContext.Patients = _dbContext.Patients.Append(_patient);
-            //_dbContext.SaveChanges();
+            //_dbContext.Patients = _dbContext.Patients.Add(_patient);
+            _dbContext.Patients.Add(_patient);
+            _dbContext.SaveChanges();
 
             // write to database table users according to patients Id and Role
             var user = new Users
@@ -38,8 +39,9 @@ namespace PatientPortalWebApp.Components.Pages
                 AffiliateId = _patient.Id,
                 Role = "patient"
             };
-            _dbContext.Users = _dbContext.Users.Append(user);
-            //_dbContext.SaveChanges();
+            //_dbContext.Users = _dbContext.Users.Append(user);
+            _dbContext.Users.Add(user);
+            _dbContext.SaveChanges();
 
             // route back to login page
             _navigationManager.NavigateTo($"/");

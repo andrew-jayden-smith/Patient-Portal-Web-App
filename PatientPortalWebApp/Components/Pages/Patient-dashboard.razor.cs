@@ -3,8 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using PatientPortalWebApp.Data;
 using PatientPortalWebApp.Models;
 using System;
+using System.Globalization;
+using System.Linq;
 using System.Threading.Tasks;
-using static PatientPortalWebApp.Components.Pages.Login;
 
 namespace PatientPortalWebApp.Components.Pages
 {
@@ -13,16 +14,38 @@ namespace PatientPortalWebApp.Components.Pages
         [Inject]
         private NavigationManager NavigationManager { get; set; }
 
-        //[Inject]
-        //private AppDbContext _dbContext { get; set; }
-
         [Inject]
-        private MockData _dbContext { get; set; }
+        private AppDbContext _dbContext { get; set; }
+
+        [SupplyParameterFromForm]
+        public Booking? NewBooking { get; set; } = new Booking();
 
         [Parameter]
         public string PatientId { get; set; }
 
         public User Patient { get; set; }
+
+        // Property to bind appointment time input field
+        public string AppointmentTimeString { get; set; }
+
+        [SupplyParameterFromForm]
+        public int Hour { get; set; }
+
+        [SupplyParameterFromForm]
+        public int Minute { get; set; }
+
+        private async Task RequestAppointment()
+        {
+ 
+
+            NewBooking.AppointmentTime = new TimeOnly(Hour, Minute);
+
+
+            NewBooking.PatientId = Patient.Id;
+                _dbContext.Bookings.Add(NewBooking);
+                _dbContext.SaveChanges();
+
+        }
 
         protected override async Task OnInitializedAsync()
         {
@@ -35,7 +58,7 @@ namespace PatientPortalWebApp.Components.Pages
 
                 Patient = _dbContext.Patients.Where(x => x.Id == patientId).FirstOrDefault();
             }
-           catch (InvalidOperationException)
+            catch (InvalidOperationException)
             {
                 // Handle case where patient is not found or invalid PatientId format
                 NavigationManager.NavigateTo("/"); // Redirect to homepage or an error page

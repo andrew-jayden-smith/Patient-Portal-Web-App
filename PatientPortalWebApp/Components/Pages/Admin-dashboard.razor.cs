@@ -14,11 +14,11 @@ namespace PatientPortalWebApp.Components.Pages
         [Inject]
         private NavigationManager NavigationManager { get; set; }
 
-        //[Inject]
-        //private AppDbContext _dbContext { get; set; }
-
         [Inject]
-        private MockData _dbContext { get; set; }
+        private AppDbContext _dbContext { get; set; }
+
+        //[Inject]
+        //private MockData _dbContext { get; set; }
 
         [Parameter]
         public string AdminId { get; set; }
@@ -29,6 +29,8 @@ namespace PatientPortalWebApp.Components.Pages
 
 
         private List<Doctors> _doctors;
+
+        private List<Booking> _bookings;
 
         // This method happens every time the page loads
         protected override async Task OnInitializedAsync()
@@ -69,6 +71,14 @@ namespace PatientPortalWebApp.Components.Pages
                 // Handle case where doctors list is null
                 // For example, display a message or log an error
                 _doctors = new List<Doctors>(); // Initialize to an empty list to avoid null reference exceptions
+            }
+
+            _bookings = _dbContext.Bookings.ToList();
+            if (_bookings == null)
+            {
+                // Handle case where patients list is null
+                // For example, display a message or log an error
+                _bookings = new List<Booking>(); // Initialize to an empty list to avoid null reference exceptions
             }
         }
 

@@ -13,16 +13,13 @@
 <body>
 
     <!-- Taskbar -->
-<div class="bg-dark text-white p-2 d-flex justify-content-between align-items-center">
-    <h1 class="text-center m-0" style="font-size: 24px;">Medical Portal</h1>
-    <div>
-        Patient: <span>@Patient?.FirstName</span> <span>@Patient?.LastName</span>
-        <a href="/" class="btn btn-outline-light ml-2">Log Out</a>
+    <div class="p-2 d-flex justify-content-between align-items-center" style="background-color: #45a049; color: white;">
+        <h1 class="text-center m-0" style="font-size: 24px;">Medical Portal</h1>
+        <div>
+            Patient: <span>@Patient?.FirstName</span> <span>@Patient?.LastName</span>
+            <a href="/" class="btn btn-outline-light ml-2">Log Out</a>
+        </div>
     </div>
-</div>
-
-
-
 
     <!-- Navigation Tabs -->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -66,17 +63,62 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>Request Appointment</h2>
+                                <form method="post" @onsubmit="RequestAppointment" @formname="appointment-request">
+                                    <AntiforgeryToken />
+                                    Date:
+                                    <div>
+                                        <label>
+                                            <InputDate @bind-Value="NewBooking!.AppointmentDate" placeholder="Appointment Time" class="form-group" /><br>
+                                        </label>
+                                    </div>
+                                    Hour:
+                                    <div>
+                                        <label>
+                                            <InputNumber @bind-Value="Hour" placeholder="Hour" class="form-group" /><br>
+                                        </label>
+                                    </div>
+                                    Minute:
+                                    <div>
+                                        <label>
+                                            <InputNumber @bind-Value="Minute" placeholder="Minute" class="form-group" /><br>
+                                        </label>
+                                    </div>
+                                    Doctors Id:
+                                    <div>
+                                        <label>
+                                            <InputNumber @bind-Value="NewBooking!.DoctorId" placeholder="Doctor Id" class="form-group" /><br>
+                                        </label>
+                                    </div>
+                                    Notes:
+                                    <div>
+                                        <label>
+                                            <InputText @bind-Value="NewBooking!.Description" placeholder="Description" class="form-group" /><br>
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" id="appointmentButton" onclick="changeColor()">Request Appointment</button>
+
+                                    <script>
+                                        function changeColor() {
+                                            var button = document.getElementById("appointmentButton");
+                                            button.classList.remove("btn-primary");
+                                            button.classList.add("btn-success");
+                                        }
+                                    </script>
+
+                                    @* <button type="submit" class="btn btn-primary">Request Appointment</button> *@
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="tab-pane fade" id="dashboard2" role="tabpanel" aria-labelledby="dashboard2-tab">
-            <!-- Content for Dashboard 2 -->
-            <!-- Containers removed -->
-        </div>
-        <div class="tab-pane fade" id="dashboard3" role="tabpanel" aria-labelledby="dashboard3-tab">
-            <!-- Content for Dashboard 3 -->
-            <!-- Containers removed -->
         </div>
     </div>
 </body>
 </html>
+

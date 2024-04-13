@@ -13,12 +13,12 @@
 <body>
 
     <!-- Taskbar -->
-    <div class="bg-dark text-white p-2 d-flex justify-content-between align-items-center">
+    <div class="p-2 d-flex justify-content-between align-items-center" style="background-color: #45a049; color: white;">
         <h1 class="text-center m-0" style="font-size: 24px;">Medical Portal</h1>
         <div>
-            Doctor: <span>@Doctor?.FirstName</span> <span>@Doctor?.LastName</span>
+            Patient: <span>@Doctor?.FirstName</span> <span>@Doctor?.LastName</span>
             <a href="/" class="btn btn-outline-light ml-2">Log Out</a>
-        </div> <!-- This empty div will push the title to the left -->
+        </div>
     </div>
 
 
@@ -26,13 +26,7 @@
     <!-- Navigation Tabs -->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" id="dashboard1-tab" data-toggle="tab" href="#dashboard1" role="tab" aria-controls="dashboard1" aria-selected="true">Dashboard 1</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="dashboard2-tab" data-toggle="tab" href="#dashboard2" role="tab" aria-controls="dashboard2" aria-selected="false">Dashboard 2</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="dashboard3-tab" data-toggle="tab" href="#dashboard3" role="tab" aria-controls="dashboard3" aria-selected="false">Dashboard 3</a>
+            <a class="nav-link active" id="dashboard1-tab" data-toggle="tab" role="tab" aria-controls="dashboard1" aria-selected="true">Home</a>
         </li>
     </ul>
 

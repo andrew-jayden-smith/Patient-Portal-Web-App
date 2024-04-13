@@ -15,11 +15,11 @@ namespace PatientPortalWebApp.Components.Pages
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 
-        //[Inject]
-        //private AppDbContext dbContext { get; set; }
-
         [Inject]
-        private MockData dbContext { get; set; }
+        private AppDbContext dbContext { get; set; }
+
+        //[Inject]
+        //private MockData dbContext { get; set; }
 
         protected override void OnInitialized() { }
 

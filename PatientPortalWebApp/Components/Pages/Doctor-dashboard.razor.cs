@@ -12,11 +12,11 @@ namespace PatientPortalWebApp.Components.Pages
         [Inject]
         private NavigationManager NavigationManager { get; set; }
 
-        //[Inject]
-        //private AppDbContext _dbContext { get; set; }
-
         [Inject]
-        private MockData _dbContext { get; set; }
+        private AppDbContext _dbContext { get; set; }
+
+        //[Inject]
+        //private MockData _dbContext { get; set; }
 
         [Parameter]
         public string DoctorId { get; set; }
