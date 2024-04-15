@@ -1,32 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{7DC78F30-376C-4A4C-BD62-FB983B5BC65B}|PatientPortalWebApp\\PatientPortalWebApp.csproj|c:\\users\\owner\\source\\repos\\patientportal\\patientportalwebapp\\components\\pages\\doctor-dashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7DC78F30-376C-4A4C-BD62-FB983B5BC65B}|PatientPortalWebApp\\PatientPortalWebApp.csproj|solutionrelative:patientportalwebapp\\components\\pages\\doctor-dashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7DC78F30-376C-4A4C-BD62-FB983B5BC65B}|PatientPortalWebApp\\PatientPortalWebApp.csproj|c:\\users\\owner\\source\\repos\\patientportal\\patientportalwebapp\\components\\pages\\admin-dashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7DC78F30-376C-4A4C-BD62-FB983B5BC65B}|PatientPortalWebApp\\PatientPortalWebApp.csproj|solutionrelative:patientportalwebapp\\components\\pages\\admin-dashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7DC78F30-376C-4A4C-BD62-FB983B5BC65B}|PatientPortalWebApp\\PatientPortalWebApp.csproj|c:\\users\\owner\\source\\repos\\patientportal\\patientportalwebapp\\components\\pages\\patient-dashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7DC78F30-376C-4A4C-BD62-FB983B5BC65B}|PatientPortalWebApp\\PatientPortalWebApp.csproj|solutionrelative:patientportalwebapp\\components\\pages\\patient-dashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7DC78F30-376C-4A4C-BD62-FB983B5BC65B}|PatientPortalWebApp\\PatientPortalWebApp.csproj|c:\\users\\owner\\source\\repos\\patientportal\\patientportalwebapp\\components\\pages\\admin-dashboard.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DC78F30-376C-4A4C-BD62-FB983B5BC65B}|PatientPortalWebApp\\PatientPortalWebApp.csproj|solutionrelative:patientportalwebapp\\components\\pages\\admin-dashboard.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7DC78F30-376C-4A4C-BD62-FB983B5BC65B}|PatientPortalWebApp\\PatientPortalWebApp.csproj|c:\\users\\owner\\source\\repos\\patientportal\\patientportalwebapp\\components\\pages\\patients.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7DC78F30-376C-4A4C-BD62-FB983B5BC65B}|PatientPortalWebApp\\PatientPortalWebApp.csproj|solutionrelative:patientportalwebapp\\components\\pages\\patients.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7DC78F30-376C-4A4C-BD62-FB983B5BC65B}|PatientPortalWebApp\\PatientPortalWebApp.csproj|c:\\users\\owner\\source\\repos\\patientportal\\patientportalwebapp\\components\\pages\\patients.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7DC78F30-376C-4A4C-BD62-FB983B5BC65B}|PatientPortalWebApp\\PatientPortalWebApp.csproj|solutionrelative:patientportalwebapp\\components\\pages\\patients.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -39,90 +14,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 542,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Patient-dashboard.razor",
-              "DocumentMoniker": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\Components\\Pages\\Patient-dashboard.razor",
-              "RelativeDocumentMoniker": "PatientPortalWebApp\\Components\\Pages\\Patient-dashboard.razor",
-              "ToolTip": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\Components\\Pages\\Patient-dashboard.razor",
-              "RelativeToolTip": "PatientPortalWebApp\\Components\\Pages\\Patient-dashboard.razor",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-13T05:57:16.466Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Doctor-dashboard.razor",
-              "DocumentMoniker": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\Components\\Pages\\Doctor-dashboard.razor",
-              "RelativeDocumentMoniker": "PatientPortalWebApp\\Components\\Pages\\Doctor-dashboard.razor",
-              "ToolTip": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\Components\\Pages\\Doctor-dashboard.razor",
-              "RelativeToolTip": "PatientPortalWebApp\\Components\\Pages\\Doctor-dashboard.razor",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAIwBwAAABMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-13T05:56:33.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Admin-dashboard.razor.cs",
-              "DocumentMoniker": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\Components\\Pages\\Admin-dashboard.razor.cs",
-              "RelativeDocumentMoniker": "PatientPortalWebApp\\Components\\Pages\\Admin-dashboard.razor.cs",
-              "ToolTip": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\Components\\Pages\\Admin-dashboard.razor.cs",
-              "RelativeToolTip": "PatientPortalWebApp\\Components\\Pages\\Admin-dashboard.razor.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAIwEsAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T05:19:06.112Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Patients.razor.cs",
-              "DocumentMoniker": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\Components\\Pages\\Patients.razor.cs",
-              "RelativeDocumentMoniker": "PatientPortalWebApp\\Components\\Pages\\Patients.razor.cs",
-              "ToolTip": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\Components\\Pages\\Patients.razor.cs",
-              "RelativeToolTip": "PatientPortalWebApp\\Components\\Pages\\Patients.razor.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T04:51:04.582Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Patients.razor",
-              "DocumentMoniker": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\Components\\Pages\\Patients.razor",
-              "RelativeDocumentMoniker": "PatientPortalWebApp\\Components\\Pages\\Patients.razor",
-              "ToolTip": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\Components\\Pages\\Patients.razor",
-              "RelativeToolTip": "PatientPortalWebApp\\Components\\Pages\\Patients.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-13T04:50:58.357Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Admin-dashboard.razor",
-              "DocumentMoniker": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\Components\\Pages\\Admin-dashboard.razor",
-              "RelativeDocumentMoniker": "PatientPortalWebApp\\Components\\Pages\\Admin-dashboard.razor",
-              "ToolTip": "C:\\Users\\Owner\\source\\repos\\PatientPortal\\PatientPortalWebApp\\Components\\Pages\\Admin-dashboard.razor",
-              "RelativeToolTip": "PatientPortalWebApp\\Components\\Pages\\Admin-dashboard.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAD4vxIAAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-13T04:49:11.257Z",
-              "EditorCaption": ""
             }
           ]
         }

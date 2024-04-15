@@ -9,105 +9,85 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
-
     <!-- Taskbar -->
-    <div class="p-2 d-flex justify-content-between align-items-center" style="background-color: #45a049; color: white;">
-        <h1 class="text-center m-0" style="font-size: 24px;">Medical Portal</h1>
-        <div>
-            Patient: <span>@Admin?.FirstName</span> <span>@Admin?.LastName</span>
-            <a href="/" class="btn btn-outline-light ml-2">Log Out</a>
-        </div>
-    </div>
+    <nav class="navbar navbar-dark bg-success">
+        <span class="navbar-brand mb-0 h1">Medical Portal</span>
+        <span class="navbar-text">Patient: <span>@Admin?.FirstName</span> <span>@Admin?.LastName</span></span>
+        <a href="/" class="btn btn-outline-light ml-2">Log Out</a>
+    </nav>
 
-
-
-    <!-- Navigation Tabs -->
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" id="dashboard1-tab" data-toggle="tab" role="tab" aria-controls="dashboard1" aria-selected="true">Home</a>
-        </li>
-    </ul>
-
-    <!-- Tab Content -->
-    <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="dashboard1" role="tabpanel" aria-labelledby="dashboard1-tab">
-            <div class="container-fluid mt-3">
-                <!-- Content for Dashboard 1 -->
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <ul>
-                                    <li style="font-size: 20px"><strong>Account Information</strong></li>
-                                    <h1></h1>
-                                    <li><strong>Admin Id:</strong> @Admin?.Id</li>
-                                    <li><strong>First Name:</strong> @Admin?.FirstName</li>
-                                    <li><strong>Last Name:</strong> @Admin?.LastName</li>
-                                    <li><strong>Email:</strong> @Admin?.Email</li>
-                                    <li><strong>Phone Number:</strong> @Admin?.PhoneNumber</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <ul>
-                                    <li style="font-size: 20px"><strong>Current Patients</strong></li>
-                                    <h1></h1>
-                                    @if (_patients != null)
-                                    {
-                                        foreach (var user in _patients)
-                                        {
-                                            <li>@($"{user.FirstName} {user.LastName} - {user.Id}")</li>
-                                        }
-                                    }
-                                    else
-                                    {
-                                        <li>No patients found</li>
-                                    }
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <ul>
-                                    <li style="font-size: 20px"><strong>Current Appointment Requests</strong></li>
-                                    <h1></h1>
-                                    @if (_bookings != null)
-                                    {
-                                        @foreach (var bookings in _bookings)
-                                        {
-                                            <li>
-                                                @($"Id: {bookings.BookingId} Date: {bookings.AppointmentDate} Time: {bookings.AppointmentTime} Doctor Id: {bookings.DoctorId}")
-                                            </li>
-                                        }
-                                    } 
-                                    else
-                                    {
-                                       <li> No Current Appointments</li>
-                                    }
-                                </ul>
-                            </div>
-                        </div>
+    <!-- Content -->
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <!-- Account Information -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">Account Information</div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item"><strong>Admin Id:</strong> @Admin?.Id</li>
+                            <li class="list-group-item"><strong>First Name:</strong> @Admin?.FirstName</li>
+                            <li class="list-group-item"><strong>Last Name:</strong> @Admin?.LastName</li>
+                            <li class="list-group-item"><strong>Email:</strong> @Admin?.Email</li>
+                            <li class="list-group-item"><strong>Phone Number:</strong> @Admin?.PhoneNumber</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <!-- Current Patients -->
+            <div class="col-md-6">
                 <div class="card">
+                    <div class="card-header bg-info text-white">Current Patients</div>
                     <div class="card-body">
-                        <ul>
-                            <li style="font-size: 20px"><strong>Current Doctors</strong></li>
-                            <h1></h1>
-                            @foreach (var doctors in _doctors)
+                        <ul class="list-group">
+                            @if (_patients != null)
                             {
-                                <li>
-                                    @($"{doctors.FirstName} {doctors.LastName} - {doctors.Id}")
-                                </li>
+                                foreach (var user in _patients)
+                                {
+                                    <li class="list-group-item">@($"{user.FirstName} {user.LastName} - {user.Id}")</li>
+                                }
+                            }
+                            else
+                            {
+                                <li class="list-group-item">No patients found</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Current Doctors -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-warning text-white">Current Doctors</div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            @foreach (var doctor in _doctors)
+                            {
+                                <li class="list-group-item">@($"{doctor.FirstName} {doctor.LastName} - {doctor.Id}")</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Current Appointment Requests -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-danger text-white">Current Appointment Requests</div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            @if (_bookings != null)
+                            {
+                                @foreach (var booking in _bookings)
+                                {
+                                    <li class="list-group-item">
+                                        @($"Id: {booking.BookingId} | Date: {booking.AppointmentDate} | Time: {booking.AppointmentTime} | Doctor Id: {booking.DoctorId}")
+                                    </li>
+                                }
+                            }
+                            else
+                            {
+                                <li class="list-group-item">No Current Appointments</li>
                             }
                         </ul>
                     </div>
@@ -115,5 +95,10 @@
             </div>
         </div>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
