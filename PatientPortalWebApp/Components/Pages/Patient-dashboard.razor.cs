@@ -20,6 +20,8 @@ namespace PatientPortalWebApp.Components.Pages
         [SupplyParameterFromForm]
         public Booking? NewBooking { get; set; } = new Booking();
 
+        private List<Doctors> _doctors;
+
         [Parameter]
         public string PatientId { get; set; }
 
@@ -62,6 +64,15 @@ namespace PatientPortalWebApp.Components.Pages
             {
                 // Handle case where patient is not found or invalid PatientId format
                 NavigationManager.NavigateTo("/"); // Redirect to homepage or an error page
+            }
+
+            // Retrieve doctors from the database
+            _doctors = _dbContext.Doctors.ToList();
+            if (_doctors == null)
+            {
+                // Handle case where doctors list is null
+                // For example, display a message or log an error
+                _doctors = new List<Doctors>(); // Initialize to an empty list to avoid null reference exceptions
             }
         }
     }

@@ -13,7 +13,7 @@
     <!-- Taskbar -->
     <nav class="navbar navbar-dark bg-success">
         <span class="navbar-brand mb-0 h1">Medical Portal</span>
-        <span class="navbar-text">Patient: <span>@Admin?.FirstName</span> <span>@Admin?.LastName</span></span>
+        <span class="navbar-text">Admin: <span>@Admin?.FirstName</span> <span>@Admin?.LastName</span></span>
         <a href="/" class="btn btn-outline-light ml-2">Log Out</a>
     </nav>
 
@@ -23,7 +23,7 @@
             <!-- Account Information -->
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header bg-primary text-white">Account Information</div>
+                    <div class="card-header bg-success text-white">Account Information</div>
                     <div class="card-body">
                         <ul class="list-group">
                             <li class="list-group-item"><strong>Admin Id:</strong> @Admin?.Id</li>
@@ -38,7 +38,7 @@
             <!-- Current Patients -->
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header bg-info text-white">Current Patients</div>
+                    <div class="card-header bg-success text-white">Current Patients</div>
                     <div class="card-body">
                         <ul class="list-group">
                             @if (_patients != null)
@@ -59,7 +59,7 @@
             <!-- Current Doctors -->
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header bg-warning text-white">Current Doctors</div>
+                    <div class="card-header bg-success text-white">Current Doctors</div>
                     <div class="card-body">
                         <ul class="list-group">
                             @foreach (var doctor in _doctors)
@@ -73,7 +73,7 @@
             <!-- Current Appointment Requests -->
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header bg-danger text-white">Current Appointment Requests</div>
+                    <div class="card-header bg-success text-white">Current Appointment Requests</div>
                     <div class="card-body">
                         <ul class="list-group">
                             @if (_bookings != null)

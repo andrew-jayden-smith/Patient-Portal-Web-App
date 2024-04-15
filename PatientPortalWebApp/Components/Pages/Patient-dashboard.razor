@@ -32,40 +32,38 @@
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="dashboard1" role="tabpanel" aria-labelledby="dashboard1-tab">
             <div class="container-fluid mt-3">
-                <!-- Content for Dashboard 1 -->
+
+
                 <div class="row">
-                    <div class="col-md-4">
+                    <!-- Account Information -->
+                    <div class="col-md-6">
                         <div class="card">
+                            <div class="card-header bg-success text-white">Account Information</div>
                             <div class="card-body">
-                                <ul>
-                                    <li style="font-size: 20px"><strong>Account Information</strong></li>
-                                    <h1></h1>
-                                    <li><strong>Patient Id:</strong> @Patient?.Id</li>
-                                    <li><strong>First Name:</strong> @Patient?.FirstName</li>
-                                    <li><strong>Last Name:</strong> @Patient?.LastName</li>
-                                    <li><strong>Email:</strong> @Patient?.Email</li>
-                                    <li><strong>Phone Number:</strong> @Patient?.PhoneNumber</li>
-                                    <li><strong>Address:</strong> @Patient?.Address</li>
-                                    <li><strong>Height:</strong> @Patient?.Height</li>
-                                    <li><strong>Weight:</strong> @Patient?.Weight</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <ul>
-                                    <li style="font-size: 20px"><strong>Prescription</strong></li>
-                                    <h1></h1>
-                                    <li><strong>Current:</strong> @Patient?.Prescription</li>
+                                <ul class="list-group">
+                                    <li class="list-group-item"><strong>Patient Id:</strong> @Patient?.Id</li>
+                                    <li class="list-group-item"><strong>First Name:</strong> @Patient?.FirstName</li>
+                                    <li class="list-group-item"><strong>Last Name:</strong> @Patient?.LastName</li>
+                                    <li class="list-group-item"><strong>Email:</strong> @Patient?.Email</li>
+                                    <li class="list-group-item"><strong>Phone Number:</strong> @Patient?.PhoneNumber</li>
+                                    <li class="list-group-item"><strong>Address:</strong> @Patient?.Address</li>
+                                    <li class="list-group-item"><strong>Height:</strong> @Patient?.Height</li>
+                                    <li class="list-group-item"><strong>Weight:</strong> @Patient?.Weight</li>
+                                    <ul class="list-group">
+                                        @foreach (var doctor in _doctors)
+                                        {
+                                            <li class="list-group-item"><strong>Current Doctor: </strong>@($"{doctor.FirstName} {doctor.LastName} - Id: {doctor.Id}")</li>
+                                        }
+                                    </ul>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <!-- Request Appointment -->
+                    <div class="col-md-6">
                         <div class="card">
+                            <div class="card-header bg-success text-white">Request Appointment</div>
                             <div class="card-body">
                                 <h2>Request Appointment</h2>
                                 <form method="post" @onsubmit="RequestAppointment" @formname="appointment-request">
@@ -115,6 +113,33 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Prescription  -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header bg-success text-white">Prescriptions</div>
+                            <div class="card-body">
+                                <ul class="list-group">
+                                    <li style="font-size: 20px"><strong></strong></li>
+                                    <h1></h1>
+                                    <li><strong>Current:</strong> @Patient?.Prescription</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Appointments  -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header bg-success text-white">Appointments</div>
+                            <div class="card-body">
+                                <ul class="list-group">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
