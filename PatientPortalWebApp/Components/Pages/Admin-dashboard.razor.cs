@@ -25,12 +25,57 @@ namespace PatientPortalWebApp.Components.Pages
 
         public Admin Admin { get; set; }
 
-        private List<User> _patients;
+        public string BookingId {  get; set; }
 
+        private List<User> _patients;
 
         private List<Doctors> _doctors;
 
         private List<Booking> _bookings;
+
+        //private async Task ChangeStatus(int bookingId, string status)
+        //{
+        //    var booking = _bookings.FirstOrDefault(b => b.BookingId == bookingId);
+        //    if (booking != null)
+        //    {
+        //        booking.Status = status;
+        //        StateHasChanged(); // Re-render the UI to reflect the status change
+        //    }
+        //}
+
+        //private async Task ApproveAppointment(int bookingId)
+        //{
+        //    var booking = _bookings.FirstOrDefault(b => b.BookingId == bookingId);
+        //    if (booking != null)
+        //    {
+        //        booking.Status = "Approved";
+        //        await _dbContext.SaveChangesAsync(); // Save changes to the database
+        //    }
+        //}
+
+        //private async Task CancelAppointment(int bookingId)
+        //{
+        //    var booking = _bookings.FirstOrDefault(b => b.BookingId == bookingId);
+        //    if (booking != null)
+        //    {
+        //        booking.Status = "Cancelled";
+        //        await _dbContext.SaveChangesAsync(); // Save changes to the database
+        //    }
+        //}
+        private async Task Submit(int bookingId)
+        {
+            var booking = _bookings.FirstOrDefault(b => b.BookingId == bookingId);
+            if (booking != null)
+            {
+                // No need to change the status here, as it's already updated by the InputText element
+                await _dbContext.SaveChangesAsync(); // Save changes to the database
+
+                // Reload bookings from the database to ensure the UI reflects the latest changes
+                _bookings = await _dbContext.Bookings.ToListAsync();
+            }
+        }
+
+
 
         // This method happens every time the page loads
         protected override async Task OnInitializedAsync()

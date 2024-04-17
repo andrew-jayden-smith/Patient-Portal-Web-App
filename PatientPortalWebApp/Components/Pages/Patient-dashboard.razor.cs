@@ -44,6 +44,7 @@ namespace PatientPortalWebApp.Components.Pages
 
 
             NewBooking.PatientId = Patient.Id;
+            NewBooking.Status = "Pending";
                 _dbContext.Bookings.Add(NewBooking);
                 _dbContext.SaveChanges();
 

@@ -38,7 +38,8 @@ namespace PatientPortalWebApp.Components.Pages
             // loop the users to see what their role 
             foreach (var user in users)
             {
-                if (user.Role == "patient") {
+                if (user.Role == "patient") 
+                {
                     loginUsers.Add(new LoginUser
                     {
                         User = user,

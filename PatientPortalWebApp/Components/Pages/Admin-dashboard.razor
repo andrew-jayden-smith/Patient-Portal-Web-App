@@ -81,7 +81,11 @@
                                 @foreach (var booking in _bookings)
                                 {
                                     <li class="list-group-item">
-                                        @($"Id: {booking.BookingId} | Date: {booking.AppointmentDate} | Time: {booking.AppointmentTime} | Doctor Id: {booking.DoctorId}")
+                                        Id: @booking.BookingId | Date: @booking.AppointmentDate | Time: @booking.AppointmentTime | Doctor Id: @booking.DoctorId | Status: @booking.Status
+                                        <form>
+                                            <InputText @bind-Value="booking.Status" placeholder="Enter Status" class="input-style" /><br>
+                                            <button type="button" @onclick="() => Submit(booking.BookingId)" class="btn btn-style">Update Status</button>
+                                        </form>
                                     </li>
                                 }
                             }
